@@ -5,39 +5,56 @@ import Portfolio from './Containers/Portfolio'
 import Contact from './Containers/Contact'
 
 import './style.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
 
-  const [bot, setBot] = useState('0')
-  const [right, setRight] = useState('100vw')
+  const [topp, setTopp] = useState('0px')
+  const [page, setPage] = useState(0)
 
-  const goLeft = () => {
-    setRight(0)
+  const [daa, setDaa] = useState('')
+
+  const onScroll = (e) => {
+      setDaa(e.deltaY)   
   }
-  const goRight = () => {
-    setRight('200vw')
-  }
-  const goDown = () => {
-    setBot('100vh')
-  }
-  const backToWelcomePage = () => {
-    setBot('0')
-    setRight('100vw')
-    console.log(bot)
-  }
+
+  useEffect(() => {
+    window.addEventListener('wheel', onScroll)  
+  },[])
+
+  useEffect(() => {
+    console.log(daa)
+    console.log(page)
+    if(page==0 && daa>0){
+      setTopp('100vh')
+      setPage(1)
+      setDaa(0)
+    }
+    else if(page==1 && daa<0){
+      setTopp('0vh')
+      setPage(0)
+      setDaa(0)
+    }
+    else if(page==1 && daa>0){
+      setTopp('200vh')
+      setPage(2)
+      setDaa(0)
+    }
+    else if(page==2 && daa<0){
+      setTopp('100vh')
+      setPage(1)
+      setDaa(0)
+    }
+  },[daa])
   
   return (
     <div id="app" style={{
-      bottom:bot,
-      right:right
-      }}>
-      <div className='firstRow'>
-        <About backToWelcomePage={backToWelcomePage}/>
-        <WelcomePage goLeft={goLeft} goRight={goRight} goDown={goDown} />
-        <Contact backToWelcomePage={backToWelcomePage}/>
-      </div>   
-      <Portfolio backToWelcomePage={backToWelcomePage}/>
+      bottom: topp
+    }}>
+      <WelcomePage />  
+      <About page={page}/>
+      {/* <Contact scroll={scroll}/> */}
+      <Portfolio />
     </div>
   );
 }

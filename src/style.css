@@ -26,7 +26,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0px;
     font-size: 22px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #app {
@@ -35,24 +35,13 @@ body {
     align-items: center;
     transition:cubic-bezier(.45,.84,.68,.99) 1s ; 
     position: relative;
-    width: 300vw;    
-    height: 200vh;
+    width: 100vw;    
+    height: 300vh;
 }
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXX 1 FIRST ROW XXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-
-.firstRow{
-    display: flex;
-    width: 300vw;
-    height: 100vh;
-}
-
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXX 2 WELCOME PAGE XXXXXXXX
+XXXXXXX 1 WELCOME PAGE XXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 #welcomePage {
@@ -71,9 +60,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75); 
     display: flex;
-    justify-content: space-between;
-    padding: 0 2vw;
-    box-sizing: border-box;
+    justify-content: center
 }
 .welcomeMessage{
     padding: 20px 0 ;  
@@ -85,7 +72,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .welcomeMessage div{
     padding-bottom: 20px ;
     position: relative;
-    left: 20px;
+    left: 10px;
 }
 .welcomeMessage div:last-child{
     padding-bottom: 0px ;
@@ -97,6 +84,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .welcomeMessage div::after{
     content:"/>";
     color: var(--redTheme);
+}
+.downBtnContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 94vh;
+    height: 5vh;
+    padding: 1vh 1vh 0;
+    background-color: rgba(0, 0, 0, 0.75); 
+}
+.fakeDiv{
+    height: 6vh;
 }
 /* BUTTONS */
 .leftBtn, .rightBtn, .downBtn{
@@ -117,16 +116,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     content:" >";
     color: var(--redTheme);
 }
-.downBtnContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 94vh;
-    height: 5vh;
-    padding: 1vh 1vh 0;
-    background-color: rgba(0, 0, 0, 0.75); 
-}
+
 @media(min-height:900px){
     .arrowDown div::after{
         content: ">";
@@ -141,14 +131,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXX 3 ABOUT XXXXXXXXXXXX
+XXXXXXXXXX 2 ABOUT XXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 #about{
     height: 100vh;
     width: 100vw;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
     background-color: rgb(48, 49, 53);
     box-sizing: border-box;
     padding: 2vw;
@@ -194,6 +184,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     width: 70px;
 }
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXX 3 CONTACT XXXXXXXXXXX
+XXXXXXXXX 4 CONTACT XXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 

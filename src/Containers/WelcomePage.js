@@ -1,19 +1,33 @@
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+function WelcomePage({scr}){
 
-function WelcomePage({goLeft, goRight, goDown}){
+    // const [daa, setDaa] = useState('')
+
+    // const onScroll = (e) => {
+    //     setDaa(e.deltaY)   
+    // }
+    // useEffect(() => {
+    //     window.addEventListener('wheel', onScroll)  
+    // },[])
+    // useEffect(() => {
+    //     if(daa>0){
+    //         scroll()
+    //     }
+    // },[daa])
 
     return(
-        <section id="welcomePage">
+        <section id="welcomePage"
+        style={{transform: scr}}>
+            {/* <div className="fakeDiv"></div> */}
             <div className="welcomeContainer">
-                <button className="leftBtn" onClick={goLeft}>ABOUT</button>
                 <div className="welcomeMessage">
                     <div>Hi, I'm Daniel Kozłowski</div>
                     <div className="bigWelcome">WELCOME</div>
                     <div>on my page</div>
                 </div>
-                <button className="rightBtn" onClick={goRight}>CONTACT</button>
             </div>
             <div className="downBtnContainer">
-                <button className="downBtn" onClick={goDown}>PORTFOLIO</button>
                 <div className="arrowDown">
                     <div></div>
                 </div>
