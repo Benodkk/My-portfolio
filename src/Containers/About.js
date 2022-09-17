@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
 
-function About(){
+function About({visibleAbout,opacityAbout}){
+    
 
     return(
-        <section id="about">
+        <section id="about"
+        style={{visibility: visibleAbout,
+                opacity: opacityAbout}}>
             <div className="content">
                 {/* <button onClick={pagee}></button> */}
                 {/* <button onClick={scrollUp}>asd</button> */}

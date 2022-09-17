@@ -26,7 +26,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0px;
     font-size: 22px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #app {
@@ -35,8 +35,6 @@ body {
     align-items: center;
     transition:cubic-bezier(.45,.84,.68,.99) 1s ; 
     position: relative;
-    width: 100vw;    
-    height: 300vh;
     background-color: rgb(48, 49, 53);
 }
 
@@ -56,7 +54,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     background-image: url("Assets/1.jpg");
     background-size: cover;
     background-position: center;
-    z-index: 1;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.432);
 }
 
@@ -81,63 +78,43 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .welcomeMessage div:last-child{
     padding-bottom: 0px ;
 }
-.welcomeMessage div::before{
+.welcomeMessage .normalDiv::before{
     content: "<";
     color: var(--redTheme);
 }
-.welcomeMessage div::after{
+.welcomeMessage .normalDiv::after{
     content:"/>";
     color: var(--redTheme);
 }
-.downBtnContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 94vh;
-    height: 5vh;
-    padding: 1vh 1vh 0;
-    background-color: rgba(0, 0, 0, 0.75); 
-}
-.fakeDiv{
-    height: 6vh;
-}
 /* BUTTONS */
-.leftBtn, .rightBtn, .downBtn{
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+.btn{
     background-color: rgba(48, 49, 53, 0);
+    cursor: pointer;
     border: none;
     color: var(--greenTheme);
     margin: 0px;
     padding: 0px;
-    font-family:'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 20px;    
+    font-family: 'Roboto Mono', monospace ;
+    font-weight: 500;
+    font-size: 40px;    
 }
-.leftBtn::before{
-    content: "< ";
+.btn::before{
+    content: "<";
     color: var(--redTheme);
 }
-.rightBtn::after{
-    content:" >";
+.btn::after{
+    content:">";
     color: var(--redTheme);
 }
-
-@media(min-height:900px){
-    .arrowDown div::after{
-        content: ">";
-        font-family:'Poppins', sans-serif;
-        color: var(--redTheme);
-
-    }
-    .arrowDown{
-        transform:translateY(-10px) rotate(90deg) 
-    }
-}
-
-
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXX 2 ABOUT XXXXXXXXXXXX
+XXXXXXX ALL CONTAINERS XXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-#about{
+
+#about, #portfolio{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -147,9 +124,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     box-sizing: border-box;
     padding: 2vw;
     position: relative;
-    bottom: 50vh;
-
+    transition: 1s;
 }
+
 .content{
     width: 1024px;
     display: flex;
@@ -161,6 +138,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     padding: 36px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.432);
 }
+
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXX 2 ABOUT XXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+#about{
+    bottom: 100vh;
+}
+#about .content div{
+    margin: 10px 0;
+}
 #about .content .quote::after{
     content:" – Martin Fowler"
 }
@@ -169,26 +158,67 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     height: 4px;
     background-color: var(--redTheme);
 }
-.content div{
-    margin: 10px 0;
+
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXX 3 PORTFOLIO XXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+#portfolio{
+    bottom: 200vh;
 }
-.aboutBtn{
-    background-color: rgba(48, 49, 53, 0);
-    border: none;
-    color: var(--greenTheme);
-    margin: 0px;
+.projectsContainer{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+}
+#portfolio ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 0px;
-    font-family:'Poppins', sans-serif;
+    margin: 0px;
+    align-self: center;
+    cursor: pointer;
+}
+#portfolio li:hover{
+    /* color: var(--greenTheme); */
     font-weight: 700;
-    font-size: 20px;  
+    color: var(--greenTheme);
+    transform: scale(0.9);
+    /* text-decoration: underline; */
+    /* text-decoration-color:var(--redTheme) */
 }
-.aboutBtn::after{
-    content: ">";
-    color: var(--redTheme);
+#portfolio .redBorder {
+    width: 4px;
+    height: 350px;
+    background-color: var(--redTheme);
 }
-.fakeDiv{
-    width: 70px;
+.projectDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+.projectInfo{
+    text-align:left;
+}
+.projectDescription img{
+    width: 500px;
+}
+.projectLinks{
+    display: flex;
+    justify-content: space-around;
+}
+
+#portfolio a:-webkit-any-link{
+    color: white;
+    text-decoration: none;
+}
+
+
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXX 4 CONTACT XXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */

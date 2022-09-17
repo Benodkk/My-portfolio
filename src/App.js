@@ -9,60 +9,29 @@ import { useEffect, useState } from 'react'
 
 function App() {
 
-  const [topp, setTopp] = useState('0px')
-  const [page, setPage] = useState(0)
 
-  const [daa, setDaa] = useState(0)
+  const [visibleAbout, setVisibleAbout] = useState('hidden')
+  const [opacityAbout, setOpacityAbout] = useState(0)
 
-  const onScroll = () => {
-      setDaa(window.scrollY*6)   
+  const [visiblePortfolio, setVisiblePortfolio] = useState('hidden')
+  const [opacityPortfolio, setOpacityPortfolio] = useState(0)
+
+  const toAboutSection = () => {
+    setVisibleAbout('visible')
+    setOpacityAbout(1)
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll)  
-  },[])
-
-  // useEffect(() => {
-  //   console.log(daa)
-  //   console.log(page)
-  //   if(page==0 && daa>0){
-  //     setTopp('100vh')
-  //     setPage(1)
-  //     setDaa(0)
-  //   }
-  //   else if(page==1 && daa<0){
-  //     setTopp('0vh')
-  //     setPage(0)
-  //     setDaa(0)
-  //   }
-  //   else if(page==1 && daa>0){
-  //     setTopp('200vh')
-  //     setPage(2)
-  //     setDaa(0)
-  //   }
-  //   else if(page==2 && daa<0){
-  //     setTopp('100vh')
-  //     setPage(1)
-  //     setDaa(0)
-  //   }
-  // },[daa])
-  const [scr , setScr] = useState('rotateX(0deg)')
-
-  useEffect(() =>{
-    console.log(window.innerHeight)
-    console.log(daa)
-    setScr(`perspective(1000px) translate3d(0px,-${(daa*200)/window.innerHeight}px ,-${(daa*200)/window.innerHeight}px) rotateX(${(daa*30)/window.innerHeight}deg)`)
-    console.log(scr)
-  },[daa])
-  
+  const toPortfolioSection = () => {
+    setVisiblePortfolio('visible')
+    setOpacityPortfolio(1)
+  }
   return (
-    <div id="app" style={{
-      bottom: topp
-    }}>
-      <WelcomePage scr={scr}/>  
-      <About page={page}/>
+    <div id="app">
+      <WelcomePage toAboutSection={toAboutSection} toPortfolioSection={toPortfolioSection}/>  
+      <About visibleAbout={visibleAbout} opacityAbout={opacityAbout}/>
+      <Portfolio visiblePortfolio={visiblePortfolio} opacityPortfolio={opacityPortfolio}/>      
       {/* <Contact scroll={scroll}/> */}
-      <Portfolio />
+
     </div>
   );
 }
