@@ -37,6 +37,7 @@ body {
     position: relative;
     width: 100vw;    
     height: 300vh;
+    background-color: rgb(48, 49, 53);
 }
 
 
@@ -55,7 +56,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     background-image: url("Assets/1.jpg");
     background-size: cover;
     background-position: center;
+    z-index: 1;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.432);
 }
+
 .welcomeContainer{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75); 
@@ -142,6 +146,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     background-color: rgb(48, 49, 53);
     box-sizing: border-box;
     padding: 2vw;
+    position: relative;
+    bottom: 50vh;
 
 }
 .content{

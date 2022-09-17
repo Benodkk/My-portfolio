@@ -27,11 +27,6 @@ function WelcomePage({scr}){
                     <div>on my page</div>
                 </div>
             </div>
-            <div className="downBtnContainer">
-                <div className="arrowDown">
-                    <div></div>
-                </div>
-            </div>
         </section>
     )
 }
