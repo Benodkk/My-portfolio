@@ -1,7 +1,7 @@
-function WelcomePage({toAboutSection, toPortfolioSection, toContactSection}){
+function WelcomePage({toAboutSection, toPortfolioSection, toContactSection, welcomeZ, welcomeTransition}){
 
     return(
-        <section id="welcomePage">
+        <section id="welcomePage" style={{zIndex:welcomeZ, transition:welcomeTransition}}>
             <div className="welcomeContainer">
                 <div className="welcomeMessage">
                     <div className="normalDiv">HELLO</div>

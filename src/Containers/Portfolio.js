@@ -4,17 +4,27 @@ import liveImg from '../Assets/live.png'
 import repoImg from '../Assets/repo.png'
 
 
-function Portfolio({visiblePortfolio, opacityPortfolio, goBack}){
+function Portfolio({visiblePortfolio, opacityPortfolio, displayPortfolio, goBack}){
 
     const [displayWhat, setDisplayWhat] = useState('p1')
     const [display, setDisplay] = useState('')
+
+    const [visibleProject, setVisibleProject] = useState('hidden')
+    const [opacityProject, setOpacityProject] = useState('0')    
 
     const toDisplay = (e) => {
         setDisplayWhat(e.target.id)
     }
 
     useEffect(() => {
-        setDisplay(projects.find(ele => ele.id==displayWhat))
+        setVisibleProject('hidden')
+        setOpacityProject('0')
+        setTimeout(()=>{
+            setDisplay(projects.find(ele => ele.id==displayWhat)) 
+            setVisibleProject('visible')
+            setOpacityProject('1')
+        }, 500)
+        
     },[displayWhat])
 
     const activeEle = (e) => {
@@ -24,6 +34,9 @@ function Portfolio({visiblePortfolio, opacityPortfolio, goBack}){
             )
         }
     }
+
+
+
 
     return(
         <section id="portfolio"
@@ -47,8 +60,10 @@ function Portfolio({visiblePortfolio, opacityPortfolio, goBack}){
                         })}
                     </ul>
                     <div className="redBorder"></div>
-                    <div className="projectInfo">{display.description}</div>
-                    <div className="projectDescription">
+                    <div className="projectInfo" style={{visibility: visibleProject, opacity: opacityProject}} >
+                        {display.description}
+                    </div>
+                    <div className="projectDescription" style={{visibility: visibleProject, opacity: opacityProject}}>
                         <img src={display.img}/>
                         <div className="projectLinks">
                             <a href={display.live}><img src={liveImg}/><div>Live</div></a>

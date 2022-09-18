@@ -34,6 +34,7 @@ h1{
     font-weight: 700;
     cursor: pointer;
     height: 100%;
+    transition: 0.3s;
 }
 .goBack::before{
     content: "<";
@@ -80,6 +81,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.432);
+    z-index: 1;
 }
 
 .welcomeContainer{
@@ -126,6 +128,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     font-family: 'Roboto Mono', monospace ;
     font-weight: 500;
     font-size: 40px;    
+    transition: 0.3s;
 }
 .btn::before{
     content: "<";
@@ -155,7 +158,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     box-sizing: border-box;
     padding: 2vw;
     position: relative;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .content{
@@ -200,7 +203,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 #portfolio{
     bottom: 200vh;
+    transition: display(0s)
 }
+
 .projectsContainer{
     display: flex;
     align-items: center;
@@ -217,8 +222,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     align-self: center;
     cursor: pointer;
 }
+#portfolio li{
+    transition: 0.3s;
+}
 #portfolio li:hover, #portfolio .projectLinks a:hover{
-    font-weight: 700;
     color: var(--greenTheme);
     transform: scale(0.9);
 }
@@ -234,9 +241,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display: flex;
     flex-direction: column;
     gap: 15px;
+    transition: 1s;
 }
 .projectInfo{
     text-align:left;
+    transition: 1s;
 }
 .projectDescription img{
     width: 500px;
@@ -249,6 +258,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: 0.3s;
 }
 .projectLinks img{
     width: 25px;
@@ -258,9 +268,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     color: white;
     text-decoration: none;
 }
-
-
-
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXX 4 CONTACT XXXXXXXXXXX
@@ -272,9 +279,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 #contact .content{
     gap: 15px;
 }
-
-
-
 #contact .contactInfo{
     display: flex;
     flex-direction: column;
@@ -285,6 +289,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display:flex;
     gap: 10px;
     align-items: center;
+    transition: 0.3s;
 }
 #contact .email::before{
     content: 'email: ';
@@ -294,8 +299,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     content: 'github: ';
     color: rgb(170, 170, 170);
 }
-
-
+#contact  .githubInfo a{
+    transition: 0.3s;
+}
 #contact  img {
     width: 30px;
 }
@@ -307,10 +313,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: 0.3s;
 }
-#contact  .githubInfo:hover, #contact  .githubInfo:hover a, #contact .emailInfo:hover{
+#contact  .githubInfo:hover, #contact .emailInfo:hover{
     color: var(--greenTheme);
     transform: scale(0.93);
+}
+#contact  .githubInfo:hover a{
+    color: var(--greenTheme);
 }
 #contact  .githubInfo:active, #contact .repoInfo:active{
     transform: translateY(3px) scale(0.9);
