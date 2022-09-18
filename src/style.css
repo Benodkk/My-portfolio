@@ -14,6 +14,11 @@ a:-webkit-any-link{
     color: black;
     text-decoration: none;
 }
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 h1{
     font-size: 40px;
     text-align: center;
@@ -21,6 +26,26 @@ h1{
     margin: 0px;
     padding: 20px 0;
 }
+.fakeDiv{
+    visibility: hidden;
+}
+.goBack{
+    color: var(--greenTheme);
+    font-weight: 700;
+    cursor: pointer;
+    height: 100%;
+}
+.goBack::before{
+    content: "<";
+    color: var(--redTheme);
+}
+.goBack:hover{
+    transform: scale(0.9);
+}
+.goBack:active{
+    transform: translateY(3px) scale(0.9);
+}
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -110,11 +135,17 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     content:">";
     color: var(--redTheme);
 }
+.btn:hover{
+    transform: scale(0.93);
+}
+.btn:active{
+    transform: translateY(3px) scale(0.9);
+}
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXX ALL CONTAINERS XXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
-#about, #portfolio{
+#about, #portfolio, #contact{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -150,6 +181,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 #about .content div{
     margin: 10px 0;
 }
+#about .content .goBack{
+    margin:0px
+}
 #about .content .quote::after{
     content:" – Martin Fowler"
 }
@@ -183,13 +217,13 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     align-self: center;
     cursor: pointer;
 }
-#portfolio li:hover{
-    /* color: var(--greenTheme); */
+#portfolio li:hover, #portfolio .projectLinks a:-webkit-any-link:hover{
     font-weight: 700;
     color: var(--greenTheme);
     transform: scale(0.9);
-    /* text-decoration: underline; */
-    /* text-decoration-color:var(--redTheme) */
+}
+#portfolio li:active, #portfolio .projectLinks a:-webkit-any-link:active{
+    transform: translateY(3px) scale(0.9);
 }
 #portfolio .redBorder {
     width: 4px;
@@ -211,6 +245,14 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display: flex;
     justify-content: space-around;
 }
+.projectLinks a:-webkit-any-link{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.projectLinks img{
+    width: 25px;
+}
 
 #portfolio a:-webkit-any-link{
     color: white;
@@ -219,7 +261,61 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 
 
+
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXX 4 CONTACT XXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
+#contact {
+    bottom: 300vh;
+}
+#contact .content{
+    gap: 15px;
+}
+
+
+
+#contact .contactInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+#contact .emailInfo, #contact .githubInfo{
+    display:flex;
+    gap: 10px;
+    align-items: center;
+}
+#contact .email::before{
+    content: 'email: ';
+    color: rgb(170, 170, 170);
+}
+#contact .github::before{
+    content: 'github: ';
+    color: rgb(170, 170, 170);
+}
+
+
+#contact  img {
+    width: 30px;
+}
+#contact  a:-webkit-any-link{
+    color: white;
+    text-decoration: none;
+}
+#contact .repoInfo a:-webkit-any-link{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#contact  .githubInfo:hover, #contact  .githubInfo:hover a:-webkit-any-link, #contact .emailInfo:hover{
+    color: var(--greenTheme);
+    transform: scale(0.93);
+}
+#contact  .githubInfo:active, #contact .repoInfo:active{
+    transform: translateY(3px) scale(0.9);
+}
+#contact  .repoInfo a:-webkit-any-link:hover{
+    color: var(--greenTheme);
+    transform: scale(0.93);
+}

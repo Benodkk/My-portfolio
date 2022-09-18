@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-function About({visibleAbout,opacityAbout}){
+function About({visibleAbout,opacityAbout, goBack}){
     
 
     return(
@@ -8,9 +8,11 @@ function About({visibleAbout,opacityAbout}){
         style={{visibility: visibleAbout,
                 opacity: opacityAbout}}>
             <div className="content">
-                {/* <button onClick={pagee}></button> */}
-                {/* <button onClick={scrollUp}>asd</button> */}
-                <h1 >ABOUT ME</h1>
+                <div className="titleContainer">
+                    <div className="goBack" onClick={goBack}>BACK</div>
+                    <h1 >ABOUT ME</h1>
+                    <div className="fakeDiv">BACK</div>
+                </div>
                 <div>
                     Welcome! My name is Daniel Kozłowski, I'm learning programming and I'm looking forward to start working as a developer.
                     I am also a civil engineer, but I decided to change the industry and try my hand at programming.

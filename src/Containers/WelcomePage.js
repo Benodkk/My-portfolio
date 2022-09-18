@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-function WelcomePage({toAboutSection, toPortfolioSection}){
+function WelcomePage({toAboutSection, toPortfolioSection, toContactSection}){
 
     return(
         <section id="welcomePage">
@@ -13,7 +13,7 @@ function WelcomePage({toAboutSection, toPortfolioSection}){
                     <div className="buttonsContainer">
                         <button className="btn" onClick={toAboutSection} >ABOUT</button>
                         <button className="btn" onClick={toPortfolioSection}>PORTFOLIO</button>
-                        <button className="btn">CONTACT</button>
+                        <button className="btn" onClick={toContactSection}>CONTACT</button>
                     </div>
                 </div>
             </div>

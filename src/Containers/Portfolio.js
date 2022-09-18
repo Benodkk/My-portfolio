@@ -1,8 +1,10 @@
 import {projects} from '../allProjects'
 import { useEffect, useState } from 'react'
+import liveImg from '../Assets/live.png'
+import repoImg from '../Assets/repo.png'
 
 
-function Portfolio({visiblePortfolio, opacityPortfolio}){
+function Portfolio({visiblePortfolio, opacityPortfolio, goBack}){
 
     const [displayWhat, setDisplayWhat] = useState('p1')
     const [display, setDisplay] = useState('')
@@ -29,7 +31,11 @@ function Portfolio({visiblePortfolio, opacityPortfolio}){
             opacity: opacityPortfolio}}>
             
             <div className="content">
-                <h1 >PORTFOLIO</h1>
+            <div className="titleContainer">
+                    <div className="goBack" onClick={goBack}>BACK</div>
+                    <h1>PORTFOLIO</h1>
+                    <div className="fakeDiv">BACK</div>
+                </div>
                 <div className='projectsContainer'>
                     <ul>
                         {projects.map((ele) => {
@@ -45,8 +51,8 @@ function Portfolio({visiblePortfolio, opacityPortfolio}){
                     <div className="projectDescription">
                         <img src={display.img}/>
                         <div className="projectLinks">
-                            <a href={display.live}>Live</a>
-                            <a href={display.repo}>Repo</a>
+                            <a href={display.live}><img src={liveImg}/><div>Live</div></a>
+                            <a href={display.repo}><img src={repoImg}/><div>Repo</div></a>
                         </div>
                     </div>
                     
