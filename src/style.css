@@ -10,7 +10,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     --redTheme:rgb(211, 90, 90)
 }
 /* druga propzycja rgb(22, 212, 86) */
-a:-webkit-any-link{
+a{
     color: black;
     text-decoration: none;
 }
@@ -217,12 +217,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     align-self: center;
     cursor: pointer;
 }
-#portfolio li:hover, #portfolio .projectLinks a:-webkit-any-link:hover{
+#portfolio li:hover, #portfolio .projectLinks a:hover{
     font-weight: 700;
     color: var(--greenTheme);
     transform: scale(0.9);
 }
-#portfolio li:active, #portfolio .projectLinks a:-webkit-any-link:active{
+#portfolio li:active, #portfolio .projectLinks a:active{
     transform: translateY(3px) scale(0.9);
 }
 #portfolio .redBorder {
@@ -245,7 +245,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     display: flex;
     justify-content: space-around;
 }
-.projectLinks a:-webkit-any-link{
+.projectLinks a{
     display: flex;
     align-items: center;
     gap: 8px;
@@ -254,7 +254,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     width: 25px;
 }
 
-#portfolio a:-webkit-any-link{
+#portfolio a{
     color: white;
     text-decoration: none;
 }
@@ -299,23 +299,23 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 #contact  img {
     width: 30px;
 }
-#contact  a:-webkit-any-link{
+#contact  a{
     color: white;
     text-decoration: none;
 }
-#contact .repoInfo a:-webkit-any-link{
+#contact .repoInfo a{
     display: flex;
     align-items: center;
     gap: 8px;
 }
-#contact  .githubInfo:hover, #contact  .githubInfo:hover a:-webkit-any-link, #contact .emailInfo:hover{
+#contact  .githubInfo:hover, #contact  .githubInfo:hover a, #contact .emailInfo:hover{
     color: var(--greenTheme);
     transform: scale(0.93);
 }
 #contact  .githubInfo:active, #contact .repoInfo:active{
     transform: translateY(3px) scale(0.9);
 }
-#contact  .repoInfo a:-webkit-any-link:hover{
+#contact  .repoInfo a:hover{
     color: var(--greenTheme);
     transform: scale(0.93);
 }

@@ -1,4 +1,3 @@
-// import Header from './Containers/Header'
 import WelcomePage from './Containers/WelcomePage'
 import About from './Containers/About'
 import Portfolio from './Containers/Portfolio'

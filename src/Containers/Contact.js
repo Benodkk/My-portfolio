@@ -26,7 +26,7 @@ function Contact({visibleContact, opacityContact, goBack}){
                     </div>
                     <div className='githubInfo'>
                         <img src={githubImg}/>   
-                        <a href='https://github.com/Benodkk/my-portfolio' className='github'>github.com/Benodkk</a>
+                        <a href='https://github.com/Benodkk/' className='github'>github.com/Benodkk</a>
                     </div>
                 </div>   
                 <div className="redBorder"></div>
