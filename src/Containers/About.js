@@ -23,9 +23,6 @@ function About({visibleAbout,opacityAbout, goBack}){
                     I started my learning with few small courses then i found The Odin Project. They helped me to develop my skillls and showed me the path how to become a full stack developer.
                 </div>    
                 <div className="redBorder"></div>
-                <div>
-
-                </div>
                 <div className="quote"><i>
                     “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”
                 </i></div>

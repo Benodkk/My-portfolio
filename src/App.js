@@ -20,7 +20,7 @@ function App() {
 
   const [welcomeZ, setWelcomeZ] = useState(1)
 
-  // it prents jumping from one site to another
+  // it prents sudden jumping from one site to another
   const [welcomeTransition, setWelcomeTransition] = useState('0')
 
   const toAboutSection = () => {

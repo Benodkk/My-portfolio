@@ -7,9 +7,31 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 :root{
     /* COLORS */
     --greenTheme:rgb(87, 199, 124);
-    --redTheme:rgb(211, 90, 90)
+    --redTheme:rgb(211, 90, 90);
+
 }
-/* druga propzycja rgb(22, 212, 86) */
+/* FONTS */
+@media (min-width: 320px){
+    :root{
+        --regularText:16px;
+        --bigText:26px; 
+        --h1padding:13px
+    }
+}
+@media (min-width: 641px){
+    :root{
+        --regularText:18px;
+        --bigText:30px; 
+        --h1padding:15px
+    }
+}
+@media (min-width: 1025px){
+    :root{
+        --regularText:22px;
+        --bigText:40px; 
+        --h1padding:20px
+    }
+}
 a{
     color: black;
     text-decoration: none;
@@ -20,11 +42,11 @@ a{
     width: 100%;
 }
 h1{
-    font-size: 40px;
+    font-size: var(--bigText);
     text-align: center;
     color: var(--greenTheme);
     margin: 0px;
-    padding: 20px 0;
+    padding: var(--h1padding) 0;
 }
 .fakeDiv{
     visibility: hidden;
@@ -46,15 +68,12 @@ h1{
 .goBack:active{
     transform: translateY(3px) scale(0.9);
 }
-
-
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0px;
-    font-size: 22px;
+    font-size: var(--regularText);
     overflow: hidden;
 }
-
 #app {
     display: flex;
     flex-direction: column;
@@ -93,7 +112,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .welcomeMessage{
     padding: 20px 0 ;  
     text-align: center;
-    font-size: 40px;
+    font-size: var(--bigText);
     font-weight: 500;
     color: var(--greenTheme);
 }
@@ -127,7 +146,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     padding: 0px;
     font-family: 'Roboto Mono', monospace ;
     font-weight: 500;
-    font-size: 40px;    
+    font-size: var(--bigText);    
     transition: 0.3s;
 }
 .btn::before{
@@ -160,9 +179,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     position: relative;
     transition: 0.5s;
 }
-
+@media (min-width: 1025px){
+    .content{
+        width: 1024px;
+    }
+}
 .content{
-    width: 1024px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,7 +204,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     bottom: 100vh;
 }
 #about .content div{
-    margin: 10px 0;
+    margin: 5px 0;
+}
+@media (min-width: 1025px){
+    #about .content div{
+        margin: 10px 0;
+    }
 }
 #about .content .goBack{
     margin:0px
@@ -191,11 +218,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     content:" – Martin Fowler"
 }
 .redBorder {
-    width: 600px;
+    width: 300px;
     height: 4px;
     background-color: var(--redTheme);
 }
-
+@media (min-width: 641px){
+    .redBorder{
+        width: 600px;
+    }
+}
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXX 3 PORTFOLIO XXXXXXXXXX
@@ -209,18 +240,33 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .projectsContainer{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     height: 100%;
+}
+@media (min-width: 1025px){
+    .projectsContainer{
+        gap: 30px;
+    }
+}
+@media (max-width: 1025px){
+    .projectsContainer{
+        flex-direction: column;
+    }
 }
 #portfolio ul {
     list-style-type: none;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 0px;
     margin: 0px;
     align-self: center;
     cursor: pointer;
+}
+@media (min-width: 1025px){
+    #portfolio ul{
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 #portfolio li{
     transition: 0.3s;
@@ -232,10 +278,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 #portfolio li:active, #portfolio .projectLinks a:active{
     transform: translateY(3px) scale(0.9);
 }
-#portfolio .redBorder {
-    width: 4px;
-    height: 350px;
-    background-color: var(--redTheme);
+@media (min-width: 1025px){
+    #portfolio .redBorder{
+        width: 4px;
+        height: 350px;
+    }
 }
 .projectDescription{
     display: flex;
@@ -248,7 +295,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     transition: 1s;
 }
 .projectDescription img{
-    width: 500px;
+    width: 300px;
+}
+@media (min-width: 641px){
+    .projectDescription img{
+        width: 450px;
+    }
 }
 .projectLinks{
     display: flex;
@@ -277,7 +329,12 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     bottom: 300vh;
 }
 #contact .content{
-    gap: 15px;
+    gap: 8px;
+}
+@media (min-width: 1025px){
+    #contact .content{
+        gap: 15px;
+    }
 }
 #contact .contactInfo{
     display: flex;
