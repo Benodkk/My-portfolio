@@ -135,7 +135,10 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 /* BUTTONS */
 .buttonsContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 .btn{
     background-color: rgba(48, 49, 53, 0);
