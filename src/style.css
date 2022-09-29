@@ -72,14 +72,16 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0px;
     font-size: var(--regularText);
-    overflow: hidden;
+    background-color: rgb(48, 49, 53);
+    
 }
 #app {
+    /* height: 100vh;
+    width: 100vw; */
     display: flex;
     flex-direction: column;
     align-items: center;
     transition:cubic-bezier(.45,.84,.68,.99) 1s ; 
-    position: relative;
     background-color: rgb(48, 49, 53);
 }
 
@@ -179,7 +181,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
     background-color: rgb(48, 49, 53);
     box-sizing: border-box;
     padding: 2vw;
-    position: relative;
+    position: absolute;
     transition: 0.5s;
 }
 @media (min-width: 1025px){
@@ -204,7 +206,7 @@ XXXXXXXXXX 2 ABOUT XXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 #about{
-    bottom: 100vh;
+    top: 0px;
 }
 #about .content div{
     margin: 5px 0;
@@ -236,7 +238,7 @@ XXXXXXXX 3 PORTFOLIO XXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 #portfolio{
-    bottom: 200vh;
+    top: 0px;
     transition: display(0s)
 }
 
@@ -329,7 +331,7 @@ XXXXXXXXX 4 CONTACT XXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 #contact {
-    bottom: 300vh;
+    top: 0px;
 }
 #contact .content{
     gap: 8px;

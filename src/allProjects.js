@@ -1,6 +1,6 @@
 import filmbaseImg from './Assets/filmbase.png'
 import battleshipImg from './Assets/battleship.png'
-import toDoListImg from './Assets/todo-list.png'
+import weatherAppImg from './Assets/weather-app.png'
 
 
 const projects =[
@@ -23,18 +23,10 @@ const projects =[
     {
         id:'p3',
         name:'Weather App',
-        description: 'A to-do list app built with vanilla javascript. You can add groups and to every group can add tasks. When task is done you can delete it. App only for computer/laptop size screen.',
-        repo:'https://github.com/Benodkk/Filmbase-project',
-        live:'https://benodkk.github.io/Filmbase-project/',
-        img: filmbaseImg
-    },
-    {
-        id:'p4',
-        name:'ToDo List',
-        description: 'A to-do list app built with vanilla javascript. You can add groups and to every group can add tasks. You can edit task whenever you want or delete it when its done. App only for computer size screen.',
-        repo:'https://github.com/Benodkk/Project-ToDo-List',
-        live:'https://benodkk.github.io/Project-ToDo-List/',
-        img: toDoListImg
+        description: 'Weather app built with vanilla javascript. This app uses the OpenWeather API to retreive and display data on a fully responsive UI. The app shows the locations current weather. App for any size screen.',
+        repo:'https://github.com/Benodkk/WeatherApp',
+        live:'https://benodkk.github.io/WeatherApp/',
+        img: weatherAppImg
     },
 ]
 
